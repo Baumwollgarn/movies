@@ -40,6 +40,9 @@ public class Main {
         for (Movie m : movies) {
             System.out.println(m.getTitle());
         }
+
+        sta.close();
+        conn.close();
     }
 
 }
