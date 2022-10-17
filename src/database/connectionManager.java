@@ -2,6 +2,7 @@ package database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.Scanner;
 
 public class connectionManager {
     private static Connection con;
@@ -23,6 +24,4 @@ public class connectionManager {
         }
         return con;
     }
-
-
 }
