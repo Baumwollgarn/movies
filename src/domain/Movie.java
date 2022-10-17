@@ -66,13 +66,17 @@ public class Movie {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
-        return "Movie{" +
+        return "Movie: " +
                 "Title='" + title + '\'' +
                 ", year=" + year +
                 ", director='" + director + '\'' +
                 ", genre='" + genre + '\'' +
-                '}';
+                ", id= " + id;
     }
 }
