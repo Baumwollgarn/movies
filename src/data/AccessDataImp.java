@@ -17,12 +17,20 @@ public class AccessDataImp implements IAccessData {
     }
 
     @Override
-    public boolean existMovie(int id) throws SQLException {
+    public Movie existMovie(int id) throws SQLException {
         Connection con = connectionManager.getConnection();
         Statement stmt = con.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM Movie WHERE id = " + id);
-        return rs.next();
-    }
+        Movie m1 = new Movie();
+        while (rs.next()) {
+            m1.setId(rs.getInt("id"));
+            m1.setTitle(rs.getString("title"));
+            m1.setYear(rs.getInt("year"));
+            m1.setDirector(rs.getString("director"));
+            m1.setGenre(rs.getString("genre"));
+        }
+        return m1;
+        }
 
     @Override
     public void addMovie(Movie movie) {
@@ -54,7 +62,7 @@ public class AccessDataImp implements IAccessData {
         try {
             Connection con = connectionManager.getConnection();
             Statement stmt = con.createStatement();
-            stmt.executeUpdate("DELETE FROM Movie WHERE id = " + movie.getId());
+            stmt.executeUpdate("DELETE FROM Movie WHERE title = " + "'" + movie.getTitle() +"'");
         } catch (SQLException e) {
             e.printStackTrace();
         }

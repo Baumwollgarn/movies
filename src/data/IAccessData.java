@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface IAccessData {
-    public boolean existMovie(int id) throws SQLException;
+    public Movie existMovie(int id) throws SQLException;
     public void addMovie(Movie movie);
 
     public void editMovie(Movie movie);
