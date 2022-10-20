@@ -13,7 +13,7 @@ public class connectionManager {
             Class.forName(driverName);
             try {
                 String username = "root";
-                String password = "Alex2002";
+                String password = "PASSWORD";
                 String url = "jdbc:mysql://localhost:3306/Movies";
                 con = DriverManager.getConnection(url, username, password);
             } catch (Exception e) {
